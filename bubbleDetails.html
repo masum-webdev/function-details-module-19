@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container">
+    <h3>Exploring Bubble</h3>
+    <ul id="tempList"class="list">
+      <li class="items">item-1</li>
+      <li class="items">item-2</li>
+      <li class="items">item-3</li>
+      <li class="items">item-4</li>
+      <li class="items">item-5</li>
+    </ul>
+    <button id="addItem">Add New Item</button>
+  </div>
+  <script>
+    const items=document.getElementsByClassName('items');
+    //delete
+    // for (let i = 0; i < items.length; i++) {
+    //   const item = items[i];
+     
+    //   item.addEventListener('click',function(event){
+    //     event.target.parentNode.removeChild(event.target);
+    //   })
+      
+    // }
+
+    //add
+    document.getElementById('addItem').addEventListener('click',function(event){
+        let parentItem=document.getElementById('tempList');
+        let newItem=document.createElement('li');
+        newItem.innerText="Brand New Item";
+        parentItem.appendChild(newItem);
+      });
+
+      //delete
+      document.getElementById('tempList').addEventListener('click',function(event){
+        // event.target.parentNode.removeChild(event.target);
+        const parent=event.target.parentNode;
+        console.log(parent);
+      })
+  </script>
+</body>
+</html>

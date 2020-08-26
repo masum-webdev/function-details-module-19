@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1 onclick="console.log('Hero Programmer')">Exploring Event</h1>
+
+  <!-- first way -->
+  <button id="btn" onclick="clickHandle()">Click me</button>
+  <button>click me-1</button>
+  <button id="second-btn">click me-2</button>
+  <button>click me-3</button>
+  <button id='last-btn'>click me-4</button>
+
+  <script>
+    function clickHandle(){
+      // console.log(new Date);
+        // document.getElementById('btn').innerText="I am Clicked now";
+        document.body.style.backgroundColor='red';
+    }
+    
+    const secondButton=document.getElementById("second-btn");
+    //second way
+    // secondButton.onclick=clickHandle();
+    //third way
+    secondButton.addEventListener('click',clickHandle);
+    //fourth way
+    document.getElementById('last-btn').addEventListener('click',function(){
+      document.body.style.backgroundColor='green';
+    });
+  </script>
+</body>
+</html>
